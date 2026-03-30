@@ -20,7 +20,7 @@ int visited[n][n];
 int dy[4] = {1, 0, -1, 0};
 int dx[4] = {0, 1, 0, -1};
 
-void bfs(int u, int v){
+void dfs(int u, int v){
     adj[u][v] = 0;
     // visited[u][v] = 1;
     for(int i = 0; i < 4; i++){
@@ -29,7 +29,7 @@ void bfs(int u, int v){
         if (nu < 0 || nv < 0 || nu >= n || nv >= n) continue;
         if (adj[nu][nv] == 0) continue;
         // if (visited[nu][nv]) continue;
-        bfs(nu, nv);
+        dfs(nu, nv);
     }
 }
 
@@ -40,7 +40,7 @@ int main(){
         for(int j = 0; j < n; j++){
             if(adj[i][j] == 1){
                 res++;
-                bfs(i, j);
+                dfs(i, j);
             }
         }
     }
