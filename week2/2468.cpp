@@ -32,7 +32,7 @@ int main(){
     }
 
     for (h = 0; h < max_n; h++){
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < n; i++){ //visited 초기화
             for (int j = 0; j < n; j++){
                 visited[i][j] = 0;
             }
